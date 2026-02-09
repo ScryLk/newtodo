@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: newtodo
+  datasource:
+    url: jdbc:mysql://localhost:3306/newtodo
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
