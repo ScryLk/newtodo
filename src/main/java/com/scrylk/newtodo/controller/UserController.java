@@ -6,6 +6,7 @@ import com.scrylk.newtodo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -21,18 +22,22 @@ public class UserController {
     }
 
     @GetMapping
-    public void getAllUsers() {
-        service.getAllUser();
+    public List<UserModel> getAllUsers() {
+        return service.getAllUser();
     }
 
-    @GetMapping
-    public void getUserById(UUID user_id) {
+    @GetMapping("{user_id}")
+    public void getUserById(@PathVariable UUID user_id) {
         service.getUserById(user_id);
     }
 
-    @DeleteMapping
-    public void deleteUser(UUID user_id) {
-        service.deleteUser(user_id);
+    @PutMapping("{user_id}")
+    public void updateUser(@PathVariable UUID user_id) {
+        service.updateUser(user_id);
+    }
 
+    @DeleteMapping("{user_id}")
+    public void deleteUser(@PathVariable UUID user_id) {
+        service.deleteUser(user_id);
     }
 }

@@ -53,4 +53,14 @@ public class UserModel extends BaseClass {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public UserModel(UUID id, String username, String passwordHash, String email) {
+        this.id = id;
+        this.username = username;
+        this.passwordHash = passwordHash;
+        this.email = email;
+    }
+
+    public UserModel() {
+    }
 }
